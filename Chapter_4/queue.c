@@ -1,3 +1,5 @@
+/* 双向队列处理问题 */
+
 #include <stdio.h>
 #include <string.h>
 #define LEN 8888
