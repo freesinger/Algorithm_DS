@@ -15,7 +15,7 @@ Node* listSearch (int key)
 
 void init ()
 {
-    nil = ((Node*)malloc(sizeof(Node)));
+    nil = (Node*)malloc(sizeof(Node));
     nil->next = nil;
     nil->pre = nil;
 }

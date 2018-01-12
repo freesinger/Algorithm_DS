@@ -1,4 +1,4 @@
-/* Simple calculation use staack */
+/* Simple calculation use stack */
 
 #include <stdio.h>
 #include <stdlib.h>
