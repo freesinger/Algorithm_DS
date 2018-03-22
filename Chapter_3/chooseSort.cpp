@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define N 20
+#define N 5
 
 void choose_sort(int *p, int n)
 {
