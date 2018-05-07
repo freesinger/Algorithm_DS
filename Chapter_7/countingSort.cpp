@@ -19,7 +19,6 @@ int main(void)
     for (int i = 0; i < num; i++)
         C[A[i]]++;
 
-    C[0] = C[0];
     for (int i = 1; i < num; i++)
         C[i] = C[i] + C[i - 1];
 
