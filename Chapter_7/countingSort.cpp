@@ -22,10 +22,8 @@ int main(void)
     for (int i = 1; i < num; i++)
         C[i] = C[i] + C[i - 1];
 
-    for (int i = 0; i < num; i++) {
-        B[C[A[i]] - 1] = A[i];
-        C[A[i]]--;
-    }
+    for (int i = 0; i < num; i++)
+        B[--C[A[i]]] = A[i];   
 
     for (int i = 0; i < num; i++)
         cout << B[i] << ' ';
