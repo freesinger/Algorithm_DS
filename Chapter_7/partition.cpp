@@ -8,13 +8,15 @@ int partition(int A[], int r)
 {
     int x = A[r];
     int i = -1;
-    for (int j = 0; j < r - 1; j++) {
+
+    for (int j = 0; j < r; j++) {
         if (A[j] <= x) {
             i++;
             swap(A[i], A[j]);
         }
     }
     swap(A[i + 1], A[r]);
+
     return i + 1;
 }
 
