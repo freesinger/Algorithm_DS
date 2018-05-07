@@ -7,13 +7,16 @@ using namespace std;
 int partition(int A[], int r)
 {
     int x = A[r];
+    // i指向数组首元素前
     int i = -1;
 
+    // j依次向后遍历
     for (int j = 0; j < r; j++)
         if (A[j] <= x)
             swap(A[++i], A[j]);
     swap(A[i + 1], A[r]);
 
+    // 返回基准数的数组位置
     return i + 1;
 }
 
