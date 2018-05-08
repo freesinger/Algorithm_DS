@@ -24,7 +24,7 @@ void rec(int u, int p)
         rec(tree[u].right, p);
 }
 
-void printChiledren(int u)
+void printChildren(int u)
 {
     cout << "node " << u << ": ";
     cout << "parent = " << tree[u].parent << ", ";
@@ -84,7 +84,7 @@ int main(void)
     rec(root, 0);
 
     for (int i = 0; i < num; i++)
-        printChiledren(i);
+        printChildren(i);
 
     free(tree);
     free(depth);
