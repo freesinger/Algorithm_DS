@@ -65,13 +65,11 @@ int main(void)
         elem = (int*)malloc(degree * sizeof(int));
         for (int j = 0; j < degree; j++) {
             cin >> elem[j];
-            if (j == 0) {
+            if (j == 0)
                 tree[id].left = elem[j];
-                tree[elem[j]].parent = id; 
-            } else {
+            else
                 tree[elem[j - 1]].right = elem[j];
-                tree[elem[j]].parent = id;
-            }
+            tree[elem[j]].parent = id;
         }
         free(elem);
     }
