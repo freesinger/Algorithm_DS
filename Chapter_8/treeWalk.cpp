@@ -68,5 +68,7 @@ int main(void)
     postParse(root);
     cout << '\n';
 
+    free(tree);
+
     return 0;
 }

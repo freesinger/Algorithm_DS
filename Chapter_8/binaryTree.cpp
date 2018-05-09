@@ -105,5 +105,9 @@ int main(void)
     for (int i = 0; i < num; i++)
         printInfo(i);
 
+    free(tree);
+    free(height);
+    free(depth);
+    
     return 0;
 }

@@ -11,6 +11,11 @@
         "streambuf": "cpp",
         "string_view": "cpp",
         "tuple": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "ratio": "cpp",
+        "algorithm": "cpp",
+        "chrono": "cpp",
+        "limits": "cpp",
+        "bitset": "cpp"
     }
 }
