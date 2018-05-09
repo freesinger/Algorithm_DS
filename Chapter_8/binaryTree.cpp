@@ -56,6 +56,7 @@ int countDegree(int u)
     
     return count;
 }
+
 void printInfo(int u)
 {
     printf("node %d: ", u);
