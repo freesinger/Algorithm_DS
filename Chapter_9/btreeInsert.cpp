@@ -10,18 +10,18 @@ struct Node {
     Node *parent, *left, *right;
 };
 
-Node *root, *NIL;
+static Node *root = NULL;
 
 void insert(int key)
 {
     Node *cur = root;
-    Node *pre = NIL;
+    Node *pre;
     Node *n = (Node*)malloc(sizeof(Node));
 
     n->key = key;
-    n->left = n->right = NIL;
+    n->left = n->right = NULL;
 
-    while (cur != NIL) {
+    while (cur != NULL) {
         // save previous node as parent node
         pre = cur;
         if (n->key > cur->key)
@@ -33,7 +33,7 @@ void insert(int key)
     n->parent = pre;
 
     // set root
-    if (pre == NIL)
+    if (pre == NULL)
         root = n;
     else
         if (pre->key > n->key)
@@ -44,7 +44,7 @@ void insert(int key)
 
 void inOrder(Node *u)
 {
-    if (u == NIL) return;
+    if (u == NULL) return;
     inOrder(u->left);
     cout << u->key << ' ';
     inOrder(u->right);
@@ -52,7 +52,7 @@ void inOrder(Node *u)
 
 void preOrder(Node *u)
 {
-    if (u == NIL) return;
+    if (u == NULL) return;
     cout << u->key << ' ';
     preOrder(u->left);
     preOrder(u->right);
