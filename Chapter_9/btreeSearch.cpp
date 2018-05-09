@@ -86,8 +86,8 @@ int main(void)
             insert(new_num);
         } else if (order[0] == 'f') {
             cin >> tar_num;
-            Node *res = find(tar_num);
-            if (res)
+            //Node *res = find(tar_num);
+            if (find(tar_num))
                 cout << "yes\n";
             else 
                 cout << "no\n";
