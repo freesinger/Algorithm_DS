@@ -11,7 +11,7 @@ struct Node {
 };
 
 Node *root, *NIL;
- 
+
 void insert(int key)
 {
     Node *cur = root;
@@ -60,6 +60,7 @@ void preOrder(Node *u)
 
 int main(void)
 {
+    
     int num, new_number;
     char order;
 
