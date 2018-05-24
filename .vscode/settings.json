@@ -16,6 +16,7 @@
         "algorithm": "cpp",
         "chrono": "cpp",
         "limits": "cpp",
-        "bitset": "cpp"
+        "bitset": "cpp",
+        "iostream": "cpp"
     }
 }
