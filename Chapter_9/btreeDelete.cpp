@@ -23,9 +23,15 @@ Node *getSuccessor(Node *x)
     if (x->right != NULL)
         return treeMinimum(x->right);
     
-    // Node *y = x->parent;
+    Node *y = x->parent;
+    while (y != NULL && x == y->right) {
+        x = y;
+        y = y->parent;
+    }
 
+    return y;
 }
+
 void insert(int key)
 {
     Node *cur = root;
@@ -67,6 +73,42 @@ Node* find(int key)
     return cur;
 }
 
+void treeDelete(Node *z)
+{   
+    // 删除的对象
+    Node *tar;       
+    Node *tarChild;
+
+    // 确定要删除的节点
+    if (z->left == NULL && z->right == NULL)
+        tar = z;
+    else
+        tar = getSuccessor(z);
+
+    // 确定tar的子节点
+    if (tar->left != NULL)
+        tarChild = tar->left;
+    else
+        tarChild = tar->right;
+
+    if (tarChild != NULL)
+        tarChild->parent = tar->parent;
+    
+    if (tar->parent == NULL)
+        root = tar;
+    else {
+        if (tar == tar->parent->left)
+            tar->parent->left = tarChild;
+        else
+            tar->parent->right = tarChild;
+    }
+
+    if (tar != z)
+        z->key = tar->key;
+    
+    free(tar);
+}
+
 void inOrder(Node *u)
 {
     if (u == NULL) return;
@@ -85,5 +127,33 @@ void preOrder(Node *u)
 
 int main(void)
 {
+    int num, tar;
+    string com;
+
+    cin >> num;
+
+    for (int i = 0; i < num; i++) {
+        cin >> com;
+        if (com[0] == 'f') {
+            cin >> tar;
+            Node *tem = find(tar);
+            if (tem != NULL)
+                cout << "yes" << endl;
+            else
+                cout << "no" << endl;
+        } else if (com[0] == 'i') {
+            cin >> tar;
+            insert(tar);
+        } else if (com[0] == 'p') {
+            inOrder(root);
+            cout << endl;
+            preOrder(root);
+            cout << endl;
+        } else if (com[0] == 'd') {
+            cin >> tar;
+            treeDelete(find(tar));
+        }
+    }
+
     return 0;
 }
