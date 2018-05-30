@@ -76,5 +76,7 @@ int main(void)
         }
     }
 
+    free(heap);
+    
     return 0;
 }

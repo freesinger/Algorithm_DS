@@ -42,5 +42,7 @@ int main(void)
         cout << heap[i] << ' ';
     cout << endl;
 
+    free(heap);
+    
     return 0;
 }

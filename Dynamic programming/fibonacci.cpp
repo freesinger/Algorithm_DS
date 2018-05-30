@@ -17,5 +17,7 @@ int main(void)
 
     cout << fib[num] << endl;
 
+    free(fib);
+    
     return 0;
 }
