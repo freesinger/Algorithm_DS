@@ -3,6 +3,7 @@
 #include<iostream>
 using namespace std;
 #define N 100
+// 访问次数
 #define WHITE 0
 #define GRAY  1
 #define BLACK 2
