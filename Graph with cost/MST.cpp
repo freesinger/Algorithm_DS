@@ -1,4 +1,4 @@
-/* 单源最短路径 */
+/* 最小生成树 */
 
 #include<iostream>
 using namespace std;
